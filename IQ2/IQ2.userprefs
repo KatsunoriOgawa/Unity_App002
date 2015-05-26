@@ -1,0 +1,14 @@
+﻿<Properties StartupItem="IQ2.csproj">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|x86" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/GameMain.cs">
+    <Files>
+      <File FileName="Assets/Delegate.cs" Line="21" Column="2" />
+      <File FileName="Assets/EmptyClass.cs" Line="19" Column="30" />
+      <File FileName="Assets/GameMain.cs" Line="149" Column="3" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+</Properties>
