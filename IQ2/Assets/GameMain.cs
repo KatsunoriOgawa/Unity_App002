@@ -16,8 +16,10 @@ public class GameMain : MonoBehaviour {
 	// クリアフラグ
 	private static bool isClear;
 
+	private static float picSize = 188.0f;
+
 	// 画像サイズ
-	private Rect defaultPartsRect = new Rect(0.0f, 0.0f, 200.0f, 200.0f);
+	private Rect defaultPartsRect = new Rect(0.0f, 0.0f, picSize, picSize);
 
 	// 
 	private Image imgTemp;
@@ -33,25 +35,25 @@ public class GameMain : MonoBehaviour {
 	private static Vector2[,,] postions = {
 		{
 			{
-				new Vector2( 0, 200 ),
-				new Vector2( -150, -200 ),
-				new Vector2( 150, -200 ),
+				new Vector2( 0, picSize ),
+				new Vector2( -150, -picSize ),
+				new Vector2( 150, -picSize ),
 				new Vector2( 0, 0 ), // 配列数が多いのに合わせないといけいないので使わないけど定義・・・
 				new Vector2( 0, 0 ), // 同上
 				new Vector2( 0, 0 ), // 同上
 				new Vector2( 0, 0 )  // 同上
 			},{
-				new Vector2( -150, 200 ),
+				new Vector2( -150, picSize ),
 				new Vector2( 150, 0 ),
-				new Vector2( -150, -200 ),
+				new Vector2( -150, -picSize ),
 				new Vector2( 0, 0 ), // 配列数が多いのに合わせないといけいないので使わないけど定義・・・
 				new Vector2( 0, 0 ), // 同上
 				new Vector2( 0, 0 ), // 同上
 				new Vector2( 0, 0 )  // 同上
 			},{
-				new Vector2( 150, 200 ),
+				new Vector2( 150, picSize ),
 				new Vector2( -150, 0 ),
-				new Vector2( 150, -200 ),
+				new Vector2( 150, -picSize ),
 				new Vector2( 0, 0 ), // 配列数が多いのに合わせないといけいないので使わないけど定義・・・
 				new Vector2( 0, 0 ), // 同上
 				new Vector2( 0, 0 ), // 同上
@@ -60,11 +62,11 @@ public class GameMain : MonoBehaviour {
 		},
 		{
 			{
-				new Vector2( 200, 250 ),
-				new Vector2( -200, 250 ),
+				new Vector2( picSize, 250 ),
+				new Vector2( -picSize, 250 ),
 				new Vector2( 0, 0 ),
-				new Vector2( 200, -250 ),
-				new Vector2( -200, -250 ),
+				new Vector2( picSize, -250 ),
+				new Vector2( -picSize, -250 ),
 				new Vector2( 0, 0 ), // 配列数が多いのに合わせないといけいないので使わないけど定義・・・
 				new Vector2( 0, 0 )  // 同上
 			},{
@@ -87,29 +89,29 @@ public class GameMain : MonoBehaviour {
 		},
 		{
 			{
-				new Vector2( 200, 300 ),
-				new Vector2( -200, 300 ),
+				new Vector2( picSize, 300 ),
+				new Vector2( -picSize, 300 ),
 				new Vector2( 0, 100 ),
-				new Vector2( 200, -100 ),
-				new Vector2( -200, -100 ),
-				new Vector2( 200, -300 ),
-				new Vector2( -200, -300 )
+				new Vector2( picSize, -100 ),
+				new Vector2( -picSize, -100 ),
+				new Vector2( picSize, -300 ),
+				new Vector2( -picSize, -300 )
 			},{
 				new Vector2( 0, 300 ),
-				new Vector2( -200, 150 ),
-				new Vector2( 200, 150 ),
+				new Vector2( -picSize, 150 ),
+				new Vector2( picSize, 150 ),
 				new Vector2( 0, 0 ),
-				new Vector2( -200, -150 ),
-				new Vector2( 200, -150 ),
+				new Vector2( -picSize, -150 ),
+				new Vector2( picSize, -150 ),
 				new Vector2( 0, -300 )
 			},{
-				new Vector2( -200, 300 ),
-				new Vector2( 200, 300 ),
+				new Vector2( -picSize, 300 ),
+				new Vector2( picSize, 300 ),
 				new Vector2( 0, 150 ),
-				new Vector2( -200, 0 ),
-				new Vector2( 200, 0 ),
+				new Vector2( -picSize, 0 ),
+				new Vector2( picSize, 0 ),
 				new Vector2( 0, -150 ),
-				new Vector2( -200, -300 )
+				new Vector2( -picSize, -300 )
 			}
 		}
 	};
@@ -177,7 +179,7 @@ public class GameMain : MonoBehaviour {
 			Resources.Load (countDown.ToString()) as Texture2D,
 			defaultPartsRect,
 			new Vector2(0.3f,0.3f),
-			200.0f);
+			picSize);
 		txtMessage.text = "「え」がひょうじされるまで！";
 	}
 	void Update() {
@@ -197,7 +199,7 @@ public class GameMain : MonoBehaviour {
 				Resources.Load (countDown.ToString()) as Texture2D,
 				defaultPartsRect,
 				new Vector2(0.3f,0.3f),
-				200.0f);
+				picSize);
 			timer.LimitTime = 1;
 			timer.FireDelegate = WaitQuestion;
 		} else {
@@ -207,7 +209,7 @@ public class GameMain : MonoBehaviour {
 				Resources.Load (image_path) as Texture2D,
 				defaultPartsRect,
 				new Vector2(1.0f,1.0f),
-				200.0f);
+				picSize);
 			Debug.Log ( image_path );
 			timer.LimitTime = 1;
 			timer.FireDelegate = Question;
@@ -273,7 +275,7 @@ public class GameMain : MonoBehaviour {
 				aInfos [i].t2d,
 				defaultPartsRect,
 				new Vector2(1.0f,1.0f),
-				200.0f);
+				picSize);
 		}
 	}
 
@@ -293,16 +295,17 @@ public class GameMain : MonoBehaviour {
 				pngName = "0052";
 				isClear = true;
 				SoundManager.Instance.PlaySE ( 3 );
+				rect = new Rect (0.0f, 0.0f, 300.0f, 110.0f);
 			} else {
 				pngName = "0051";
 				SoundManager.Instance.PlaySE ( 1 );
+				rect = new Rect (0.0f, 0.0f, 300.0f, 99.0f);
 			}
-			rect = new Rect (0.0f, 0.0f, 700.0f, 231.0f);
 		} else {
 			pngName = "0050";
 			Common.addBadCnt ();
 			SoundManager.Instance.PlaySE ( 2 );
-			rect = new Rect (0.0f, 0.0f, 600.0f, 231.0f);
+			rect = new Rect (0.0f, 0.0f, 300.0f, 99.0f);
 		}
 		btnPopup.gameObject.SetActive (true);
 		imgPopup.sprite = Sprite.Create(
