@@ -11,7 +11,6 @@ using System.Collections;
 public class Common : MonoBehaviour {
 
 	// StreamingAssetsのフォルダ
-
 	public static string getSaPath (string filename) {
 		return System.IO.Path.Combine (Application.streamingAssetsPath, filename);
 	}
@@ -71,4 +70,5 @@ public class Common : MonoBehaviour {
 		return sqlDB.ExecuteQuery(sql);
 	}
 
+	public static string language = Application.systemLanguage.ToString();
 }

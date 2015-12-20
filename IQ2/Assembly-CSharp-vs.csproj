@@ -51,6 +51,7 @@
      <Compile Include="Assets\Common.cs" />
      <Compile Include="Assets\Delegate.cs" />
      <Compile Include="Assets\GameMain.cs" />
+     <Compile Include="Assets\ImageLocalize.cs" />
      <Compile Include="Assets\SoundManager.cs" />
      <Compile Include="Assets\Timer.cs" />
      <Compile Include="Assets\TitleMoveScript.cs" />

@@ -309,7 +309,7 @@ public class GameMain : MonoBehaviour {
 		}
 		btnPopup.gameObject.SetActive (true);
 		imgPopup.sprite = Sprite.Create(
-			Resources.Load( pngName ) as Texture2D,
+			Resources.Load (string.Format ("Images/{0}/{1}", Common.language, pngName)) as Texture2D,
 			rect,
 			new Vector2(0.3f,0.3f),
 			0.0f);
