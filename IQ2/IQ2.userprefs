@@ -1,15 +1,14 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj" RefactoringSettings.EnableRefactorings="True">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/ImageLocalize.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/GameMain.cs">
     <Files>
-      <File FileName="Assets/GameMain.cs" Line="1" Column="1" />
-      <File FileName="Assets/ImageLocalize.cs" Line="13" Column="57" />
+      <File FileName="Assets/GameMain.cs" Line="265" Column="3" />
+      <File FileName="Assets/ImageLocalize.cs" Line="11" Column="44" />
+      <File FileName="Assets/TextLocalizer.cs" Line="10" Column="37" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore>
-      <Breakpoint file="/Users/Ogawa/Documents/APP002/IQ2/Assets/ImageLocalize.cs" line="9" column="1" />
-    </BreakpointStore>
+    <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
 </Properties>

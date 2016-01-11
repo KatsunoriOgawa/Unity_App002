@@ -180,7 +180,11 @@ public class GameMain : MonoBehaviour {
 			defaultPartsRect,
 			new Vector2(0.3f,0.3f),
 			picSize);
-		txtMessage.text = "「え」がひょうじされるまで！";
+		if (Application.systemLanguage != SystemLanguage.Japanese) {
+			txtMessage.text = "A picture is indicated.";
+		} else {
+			txtMessage.text = "「え」がひょうじされるまで！";
+		}
 	}
 	void Update() {
 		if (timer.Update ()) {
@@ -203,7 +207,11 @@ public class GameMain : MonoBehaviour {
 			timer.LimitTime = 1;
 			timer.FireDelegate = WaitQuestion;
 		} else {
-			txtMessage.text = "この「え」をおぼえよう！";
+			if (Application.systemLanguage != SystemLanguage.Japanese) {
+				txtMessage.text = "Please remember a picture.";
+			} else {
+				txtMessage.text = "この「え」をおぼえよう！";
+			}
 			imgTemp = img1.GetComponent<Image>();
 			imgTemp.sprite = Sprite.Create(
 				Resources.Load (image_path) as Texture2D,
@@ -249,7 +257,11 @@ public class GameMain : MonoBehaviour {
 	// 答えを選択
 	void Anser()
 	{
-		txtMessage.text = "さっきみた「え」はどれかな？";
+		if (Application.systemLanguage != SystemLanguage.Japanese) {
+			txtMessage.text = "Which is a seen picture?";
+		} else {
+			txtMessage.text = "さっきみた「え」はどれかな？";
+		}
 		Destroy (img1);
 		timer.IsEnable = false;
 		int idx = Random.Range (0, 3);
